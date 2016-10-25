@@ -29,8 +29,9 @@ public class Producer implements Runnable{
 			while (i <= greetingCount){
 				queue.add(i + ":" + greeting);
 				i++;
+				Thread.sleep((int) (Math.random() * DELAY));
 			}
-			Thread.sleep((int) (Math.random() * DELAY));
+			
 			
 		}
 		catch(InterruptedException e){
