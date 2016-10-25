@@ -26,7 +26,7 @@ public class Producer implements Runnable{
 		try{
 			
 			int i = 1;
-			while (i < greetingCount){
+			while (i <= greetingCount){
 				queue.add(i + ":" + greeting);
 				i++;
 			}
