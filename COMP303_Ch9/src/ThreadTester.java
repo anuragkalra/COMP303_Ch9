@@ -6,7 +6,7 @@
 public class ThreadTester {
 	public static void main(String[] args){
 		BoundedQueue<String> queue = new BoundedQueue<String>(10);
-		final int GREETING_COUNT = 100;
+		final int GREETING_COUNT = 20;
 		
 		Runnable run1 = new Producer("Hello, World!", queue, GREETING_COUNT);
 		Runnable run2 = new Producer("Goodbye, World!", queue, GREETING_COUNT);
