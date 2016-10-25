@@ -4,10 +4,37 @@
  *
  */
 public class Producer implements Runnable{
-
-	public void run() {
-		// TODO Auto-generated method stub
-		
+	private String greeting;
+	private BoundedQueue<String> queue;
+	private int greetingCount;
+	
+	private static final int DELAY = 10;
+	
+	/**
+	 * Constructs a producer object
+	 * @param aGreeting the greeting to insert into a queue
+	 * @param aQueue the queue into which to insert greetings
+	 * @param count the number of greetings to produce
+	 */
+	public Producer(String aGreeting, BoundedQueue<String> aQueue, int count){
+		greeting = aGreeting;
+		queue = aQueue;
+		greetingCount = count;
+	}
+	
+	public void run(){
+		try{
+			
+			int i = 1;
+			while (i < greetingCount){
+				queue.add(i + ":" + greeting);
+				i++;
+			}
+			Thread.sleep((int) (Math.random() * DELAY));
+			
+		}
+		catch(InterruptedException e){
+		}
 	}
 
 }
