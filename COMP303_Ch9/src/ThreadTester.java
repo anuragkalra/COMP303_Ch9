@@ -1,7 +1,7 @@
 /**
  * 
  * This program runs two threads in parallel
- *
+ *@author Anurag Kalra
  */
 public class ThreadTester {
 	public static void main(String[] args){
